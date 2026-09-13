@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qazi Mahad Ahmad — ML Engineer</title>
+<meta name="description" content="Personal site and build log for Qazi Mahad Ahmad, ML Engineer specializing in Computer Vision and Machine Learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F1EFE5;
+    --ink: #1E2019;
+    --ink-soft: #5B5747;
+    --line: #CFCABA;
+    --accent: #2F5D50;
+    --accent-soft: #E4E9E2;
+    --max-w: 640px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  header.hero {
+    margin-bottom: 3.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.08;
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero .role {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 0 1.6rem;
+    max-width: 48ch;
+  }
+
+  .hero .role em {
+    font-style: normal;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+    padding-top: 1.1rem;
+  }
+
+  nav.links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  nav.links a:hover,
+  nav.links a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .contact-form {
+    max-width: 46ch;
+  }
+
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .form-row {
+    margin-bottom: 1rem;
+  }
+
+  .form-row label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.6rem 0.7rem;
+    resize: vertical;
+  }
+
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.85);
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #FBFAF6;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 0.65rem 1.3rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .contact-btn:hover { background: #24473D; }
+
+  section {
+    margin-bottom: 3.2rem;
+  }
+
+  section h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 0 0 1rem;
+  }
+
+  section p {
+    margin: 0 0 0.9rem;
+    max-width: 58ch;
+  }
+
+  .now-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid var(--accent);
+  }
+
+  .now-list li {
+    padding: 0 0 0 1.1rem;
+    margin-bottom: 1.1rem;
+    position: relative;
+  }
+
+  .now-list li:last-child { margin-bottom: 0; }
+
+  .now-list .label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.15rem;
+  }
+
+  .projects {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .projects li {
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .projects li:first-child { border-top: none; padding-top: 0; }
+
+  .projects h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin: 0 0 0.3rem;
+  }
+
+  .projects p {
+    margin: 0 0 0.5rem;
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+
+  .projects .proj-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.88rem;
+    text-decoration: none;
+    padding: 0.4rem 0;
+    margin-right: 1.3rem;
+  }
+
+  .projects .proj-links a:hover { text-decoration: underline; }
+
+  .proj-links .demo-note {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .proj-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin: 0.7rem 0;
+    background: var(--accent-soft);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tags span {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: var(--accent-soft);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  .log-empty {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.35);
+  }
+
+  .badge-slot {
+    border: 1px dashed var(--line);
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .cert-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cert-list li {
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+
+  .cert-list li:first-child { border-top: none; padding-top: 0; }
+
+  .cert-list .cert-org {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 3rem 1.25rem 4rem; }
+    nav.links a { padding: 0.6rem 0.95rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Qazi Mahad Ahmad</h1>
+    <p class="role">
+      I'm an <em>ML Engineer</em> based in Peshawar, Pakistan, specializing in
+      computer vision and machine learning. Right now I'm building
+      real-world ML systems — from digit recognition to churn prediction —
+      and posting about what I learn along the way as part of my FlyRank
+      internship.
+    </p>
+    <nav class="links" aria-label="Profile links">
+      <a href="https://linkedin.com/in/qazimahadahmad7" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/QaziMahadAhmad" target="_blank" rel="noopener">GitHub</a>
+      <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="now-heading">
+    <h2 id="now-heading">What I'm working on</h2>
+    <ul class="now-list">
+      <li>
+        <span class="label">Current</span>
+        Machine Learning Engineering Intern at FlyRank AI — working across the
+        end-to-end ML pipeline: data preprocessing, feature engineering,
+        model development, and experimentation.
+      </li>
+      <li>
+        <span class="label">Learning</span>
+        Generative AI, LLMs, RAG, and AI agents — extending my computer
+        vision and classical ML background into the newer end of the field.
+      </li>
+      <li>
+        <span class="label">Looking for</span>
+        ML engineering opportunities and conversations with people building
+        applied AI systems, especially in computer vision and NLP.
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
+    <ul class="projects">
+      <li>
+        <h3>Digit Recognition System (Digit.AI)</h3>
+        <!-- TODO: replace this comment with a real screenshot/GIF once available:
+        <img class="proj-shot" src="/images/digit-recognition.gif" alt="Digit recognition canvas UI predicting a handwritten 7 with 98% confidence"> -->
+        <p>End-to-end ML pipeline recognizing handwritten digits in real time, 95.03% test accuracy on 70,000 MNIST samples. PCA for dimensionality reduction, 5-fold cross-validation to tune a KNN classifier, FastAPI backend with a canvas-drawing UI, deployed on Hugging Face Spaces with Docker.</p>
+        <div class="proj-links">
+          <a href="https://huggingface.co/spaces/Mahad0007/digit-recognition" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/QaziMahadAhmad/digit-recognition" target="_blank" rel="noopener">GitHub</a>
+          <span class="demo-note">wakes up in ~30s if it's been idle</span>
+        </div>
+      </li>
+      <li>
+        <h3>Customer Churn Prediction System</h3>
+        <p>End-to-end telecom churn pipeline comparing six classification models with hyperparameter tuning, served through a FastAPI REST API with an interactive dashboard. Uses SHAP for model explainability, packaged with Docker.</p>
+        <div class="proj-links">
+          <a href="https://github.com/QaziMahadAhmad/churn-predictor" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </li>
+      <li>
+        <h3>Email Spam Detection System</h3>
+        <!-- TODO: replace this comment with a real screenshot once available:
+        <img class="proj-shot" src="/images/spam-detector.png" alt="Spam detector app classifying a sample email as spam"> -->
+        <p>Text classification model distinguishing spam from legitimate email using Naive Bayes, with tokenization, stopword removal, and TF-IDF feature extraction.</p>
+        <div class="proj-links">
+          <a href="https://email-spam-detector-09.streamlit.app" target="_blank" rel="noopener">Live demo</a>
+          <span class="demo-note">Streamlit apps sleep after inactivity too — give it ~20-30s</span>
+        </div>
+      </li>
+      <li>
+        <h3>Math Score Predictor</h3>
+        <p>Linear regression model predicting student math scores from reading and writing scores, deployed as an interactive Streamlit app and evaluated with R², MAE, and RMSE.</p>
+        <div class="proj-links">
+          <a href="https://github.com/QaziMahadAhmad/math_score_prediction" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Skills</h2>
+    <div class="tags">
+      <span>Python</span>
+      <span>Scikit-learn</span>
+      <span>TensorFlow</span>
+      <span>PyTorch</span>
+      <span>XGBoost</span>
+      <span>Pandas / NumPy</span>
+      <span>FastAPI</span>
+      <span>Streamlit</span>
+      <span>SQL</span>
+      <span>Docker</span>
+      <span>Git / GitHub</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="cert-heading">
+    <h2 id="cert-heading">Certifications</h2>
+    <ul class="cert-list">
+      <li>
+        Machine Learning Specialization
+        <div class="cert-org">DeepLearning.AI &amp; Stanford University, via Coursera</div>
+      </li>
+      <li>
+        Mathematics for Machine Learning and Data Science Specialization
+        <div class="cert-org">DeepLearning.AI, via Coursera</div>
+      </li>
+      <li>
+        AI Fluency: Framework &amp; Foundation
+        <div class="cert-org">Anthropic</div>
+      </li>
+      <li>
+        Programming for Everybody
+        <div class="cert-org">University of Michigan, via Coursera</div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="log-heading">
+    <h2 id="log-heading">Notes &amp; capstone log</h2>
+    <p>Short write-ups as the FlyRank track progresses — what I built, what broke, what I'd do differently.</p>
+    <div class="log-empty">
+      In progress — I'm currently mid-internship (Week 7 of the FlyRank track). First write-up lands here once the capstone project kicks off.
+    </div>
+  </section>
+
+  <section aria-labelledby="badge-heading">
+    <h2 id="badge-heading">FlyRank completion badge</h2>
+    <div class="badge-slot">
+      In progress — this slot fills in once the FlyRank capstone is reviewed and approved.
+    </div>
+  </section>
+
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Get in touch</h2>
+    <p>Have a question, an opportunity, or just want to talk ML? Send a message and it'll land straight in my inbox.</p>
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="35a73906-a6b7-4b99-869e-9f4466033383" />
+      <input type="hidden" name="subject" value="New message from your website" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="contact-btn">Send message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Built by hand, hosted on Netlify.</p>
+  </footer>
+
+</div>
+</body>
+</html>
